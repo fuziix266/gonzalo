@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -7,24 +7,21 @@
     <meta name="description" content="Gonzalo Ramos, dirigente APROTEC. Defendiendo la carrera funcionaria de los técnicos y profesionales de la Municipalidad de Arica con argumentos, preparación y personalidad.">
     <link rel="icon" href="https://aprotec.cl/img/logo-aprotec-banner.png" type="image/png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#8834ef",
-                        "electric-violet": "#7C3AED",
-                        "deep-purple": "#3B0764",
-                        "coral": "#FF6B6B",
-                        "amber": "#FF8E53",
-                        "background-light": "#f7f6f8",
-                        "background-dark": "#181022",
+                        "primary": "#7C3AED",
+                        "secondary": "#FF6B6B",
+                        "accent": "#F59E0B",
+                        "deep-purple": "#4C1D95",
+                        "background-soft": "#F9FAFB",
                     },
                     fontFamily: {
-                        "display": ["Inter", "sans-serif"]
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
                     },
                     borderRadius: {
                         "DEFAULT": "1rem",
@@ -38,6 +35,22 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(135deg, #7C3AED, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-blob {
+            filter: blur(80px);
+            opacity: 0.12;
+            z-index: -1;
+        }
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -52,167 +65,171 @@
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
-        @keyframes float-reverse {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(8px) rotate(-3deg); }
-        }
-        .float-anim { animation: float 6s ease-in-out infinite; }
-        .float-reverse { animation: float-reverse 5s ease-in-out infinite; }
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .gradient-text {
-            background-size: 200% 200%;
-            animation: gradient-shift 4s ease infinite;
-        }
+        .float-anim { animation: float 5s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<body class="font-display bg-white text-slate-900 antialiased overflow-x-hidden">
 
-    <!-- Glassmorphism Navigation -->
+    <!-- Navigation -->
     <nav id="header" class="fixed top-0 w-full z-50 px-4 md:px-6 py-4">
-        <div class="max-w-7xl mx-auto bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full px-6 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-xl border border-slate-200/60 px-6 md:px-8 py-3 rounded-full shadow-sm transition-all duration-300">
             <a href="#inicio" class="flex items-center gap-3">
                 <img src="img/logo-aprotec.png" alt="APROTEC Logo" class="h-9 w-auto"/>
             </a>
             <div class="hidden md:flex items-center gap-10">
-                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#inicio">Inicio</a>
-                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#valores">Valores</a>
-                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
-                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#contacto">Contáctanos</a>
+                <a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#inicio">Inicio</a>
+                <a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#valores">Valores</a>
+                <a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
+                <a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#contacto">Contacto</a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://aprotec.cl" target="_blank" class="bg-gradient-to-r from-electric-violet to-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                <a href="https://aprotec.cl" target="_blank" class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105">
                     Afíliate
                 </a>
-                <!-- Mobile menu button -->
                 <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
-                    <span class="block w-5 h-0.5 bg-white transition-all duration-300 origin-center"></span>
-                    <span class="block w-5 h-0.5 bg-white transition-all duration-300"></span>
-                    <span class="block w-5 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+                    <span class="block w-5 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
+                    <span class="block w-5 h-0.5 bg-slate-700 transition-all duration-300"></span>
+                    <span class="block w-5 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Nav -->
-    <div id="mobileNav" class="fixed top-[76px] left-4 right-4 z-40 bg-background-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-6 hidden flex-col gap-3 shadow-2xl">
-        <a class="text-white/85 text-base font-medium py-3 border-b border-white/5 block hover:text-primary transition-colors" href="#inicio">Inicio</a>
-        <a class="text-white/85 text-base font-medium py-3 border-b border-white/5 block hover:text-primary transition-colors" href="#valores">Valores</a>
-        <a class="text-white/85 text-base font-medium py-3 border-b border-white/5 block hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
-        <a class="text-white/85 text-base font-medium py-3 border-b border-white/5 block hover:text-primary transition-colors" href="#contacto">Contáctanos</a>
-        <a href="https://aprotec.cl" target="_blank" class="bg-gradient-to-r from-electric-violet to-primary text-white px-6 py-3 rounded-full text-center font-bold mt-2 block">Afíliate a APROTEC</a>
+    <div id="mobileNav" class="fixed top-[76px] left-4 right-4 z-40 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl px-6 py-5 hidden flex-col gap-2 shadow-xl">
+        <a class="text-slate-700 text-base font-medium py-3 border-b border-slate-100 block hover:text-primary transition-colors" href="#inicio">Inicio</a>
+        <a class="text-slate-700 text-base font-medium py-3 border-b border-slate-100 block hover:text-primary transition-colors" href="#valores">Valores</a>
+        <a class="text-slate-700 text-base font-medium py-3 border-b border-slate-100 block hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
+        <a class="text-slate-700 text-base font-medium py-3 border-b border-slate-100 block hover:text-primary transition-colors" href="#contacto">Contacto</a>
+        <a href="https://aprotec.cl" target="_blank" class="bg-primary text-white px-6 py-3 rounded-full text-center font-bold mt-2 block">Afíliate a APROTEC</a>
     </div>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center pt-24 pb-12 px-6 overflow-hidden">
-        <!-- Abstract background blurs -->
-        <div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent blur-3xl"></div>
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-coral/10 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-20 right-20 w-72 h-72 bg-electric-violet/8 rounded-full blur-[100px]"></div>
+    <main id="inicio" class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+        <!-- Background Blobs -->
+        <div class="absolute top-20 -left-20 size-96 bg-primary hero-blob rounded-full"></div>
+        <div class="absolute bottom-20 -right-20 size-96 bg-secondary hero-blob rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 size-64 bg-accent hero-blob rounded-full -translate-x-1/2 -translate-y-1/2"></div>
 
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center w-full">
-            <div class="lg:col-span-7 flex flex-col gap-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full w-fit fade-up">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-bold fade-up">
                     <span class="size-2 bg-primary rounded-full animate-pulse"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-primary">APROTEC — Campaña 2026</span>
+                    APROTEC — Campaña 2026
                 </div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white fade-up delay-1">
-                    Argumentos, Preparación y 
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-violet via-primary to-coral gradient-text">Personalidad</span>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-slate-900 fade-up delay-1">
+                    Argumentos, Preparación y <span class="gradient-text">Personalidad</span>
                 </h1>
-                <div class="flex flex-col gap-4">
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-700 dark:text-slate-300 fade-up delay-2">Tu Carrera Municipal, Nuestra Lucha.</h2>
-                    <p class="max-w-xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed fade-up delay-3">
+                <div class="space-y-4">
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-700 fade-up delay-2">Tu Carrera Municipal, Nuestra Lucha.</h2>
+                    <p class="text-lg text-slate-500 leading-relaxed max-w-xl fade-up delay-3">
                         Defendiendo la carrera funcionaria de los técnicos y profesionales de la Municipalidad de Arica. 
                         Terminemos con el amiguismo, luchemos con hechos y transparencia real.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-4 mt-4 fade-up delay-4">
-                    <a href="#valores" class="px-8 py-4 bg-gradient-to-r from-electric-violet to-primary text-white font-bold rounded-full shadow-xl shadow-primary/30 hover:scale-105 transition-all flex items-center gap-2 inline-flex">
+                <div class="flex flex-wrap gap-4 fade-up delay-4">
+                    <a href="#valores" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-primary/25 hover:scale-105 transition-transform inline-flex items-center gap-2">
                         Conoce Nuestro Compromiso
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
-                    <a href="https://aprotec.cl" target="_blank" class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all inline-flex items-center">
+                    <a href="https://aprotec.cl" target="_blank" class="border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full font-bold text-base hover:bg-slate-50 transition-colors inline-block">
                         Visitar APROTEC
                     </a>
                 </div>
             </div>
-            <div class="lg:col-span-5 relative fade-up delay-2">
-                <!-- Abstract floating shapes -->
-                <div class="absolute top-10 -right-10 w-24 h-24 bg-amber/20 backdrop-blur-xl rounded-2xl rotate-12 border border-white/20 float-anim"></div>
-                <div class="absolute -bottom-10 left-0 w-32 h-32 bg-primary/20 backdrop-blur-xl rounded-full border border-white/20 float-reverse"></div>
-                <div class="absolute top-1/2 -left-8 w-16 h-16 bg-coral/20 backdrop-blur-xl rounded-xl -rotate-12 border border-white/10 float-anim" style="animation-delay: 1s;"></div>
-                <div class="relative p-4 rounded-full border-4 border-dashed border-primary/30 max-w-[380px] mx-auto">
-                    <div class="rounded-full overflow-hidden border-8 border-white dark:border-slate-800 shadow-2xl">
+            <div class="relative flex justify-center fade-up delay-2">
+                <div class="relative w-[350px] md:w-[420px]">
+                    <!-- Circular Ring -->
+                    <div class="absolute inset-0 rounded-full border-[12px] border-slate-100"></div>
+                    <div class="absolute inset-[-4px] rounded-full border-4 border-dashed border-primary/30"></div>
+                    <!-- Candidate Image -->
+                    <div class="relative m-4 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                         <img alt="Gonzalo Ramos — Dirigente APROTEC" class="w-full aspect-square object-cover object-top" src="img/candidato.jpg"/>
                     </div>
+                    <!-- Floating badges -->
+                    <div class="absolute top-10 -right-4 bg-white p-3 md:p-4 rounded-2xl shadow-xl flex items-center gap-3 float-anim">
+                        <div class="size-10 bg-accent/20 text-accent rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined">verified</span>
+                        </div>
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Liderazgo</p>
+                            <p class="text-slate-500">Compromiso Real</p>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-16 -left-6 bg-white p-3 md:p-4 rounded-2xl shadow-xl flex items-center gap-3 float-anim" style="animation-delay: 1.5s;">
+                        <div class="size-10 bg-primary/20 text-primary rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Comunidad</p>
+                            <p class="text-slate-500">Arica Avanza</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Name label below the photo -->
-                <div class="text-center mt-6">
-                    <p class="text-white font-bold text-lg">Gonzalo Ramos</p>
-                    <p class="text-transparent bg-clip-text bg-gradient-to-r from-electric-violet to-coral font-semibold text-sm uppercase tracking-wider">Dirigente Municipal — APROTEC</p>
+                <!-- Name below -->
+                <div class="absolute -bottom-4 text-center w-full">
+                    <p class="font-bold text-slate-900 text-lg">Gonzalo Ramos</p>
+                    <p class="gradient-text font-semibold text-sm uppercase tracking-wider">Dirigente Municipal — APROTEC</p>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Bento Grid Values Section -->
-    <section id="valores" class="py-24 px-6 bg-white dark:bg-background-dark/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 fade-up">
+    <!-- Values Bento Grid Section -->
+    <section id="valores" class="bg-background-soft py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center fade-up">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs font-bold uppercase tracking-widest mb-4">
                     Nuestro Compromiso
                 </span>
-                <h2 class="text-3xl md:text-5xl font-black mb-4 dark:text-white">Nuestros Pilares</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">Valores que impulsan nuestra gestión municipal diaria en defensa de tu carrera funcionaria.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Nuestros Pilares</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Valores fundamentales que guían nuestra gestión en defensa de los funcionarios municipales de Arica.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:auto-rows-[280px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[280px]">
                 <!-- Card 1 Large -->
-                <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-deep-purple to-electric-violet p-10 text-white flex flex-col justify-end shadow-2xl fade-up delay-1">
-                    <div class="absolute top-8 right-8 text-white/10">
-                        <span class="material-symbols-outlined !text-[120px]">security</span>
+                <div class="md:col-span-1 md:row-span-2 bg-primary rounded-3xl p-10 flex flex-col justify-between text-white shadow-2xl shadow-primary/20 fade-up delay-1">
+                    <div>
+                        <div class="size-14 bg-white/20 rounded-2xl flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl">shield_person</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">Defensa de la Carrera Municipal</h3>
+                        <p class="text-white/80 leading-relaxed">Luchamos para que cada técnico y profesional sea valorado por su mérito, preparación y trayectoria, no por contactos políticos.</p>
                     </div>
-                    <div class="relative z-10">
-                        <span class="material-symbols-outlined mb-6 text-4xl">verified_user</span>
-                        <h3 class="text-2xl md:text-3xl font-black mb-4">Defensa de la Carrera Municipal</h3>
-                        <p class="text-white/80 text-base md:text-lg leading-relaxed">Luchamos para que cada técnico y profesional sea valorado por su mérito, preparación y trayectoria, no por contactos políticos. Tu carrera se construye con trabajo.</p>
+                    <div class="mt-8">
+                        <div class="h-1 w-20 bg-white/40 rounded-full"></div>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="md:col-span-2 bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 p-8 rounded-2xl group hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-2">
-                    <div class="flex items-start gap-6">
-                        <div class="size-16 rounded-2xl bg-coral/10 text-coral flex items-center justify-center flex-shrink-0">
-                            <span class="material-symbols-outlined text-3xl">gavel</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 dark:text-white">Fin al Amiguismo</h3>
-                            <p class="text-slate-600 dark:text-slate-400">Trabajamos para terminar con los comentarios mal intencionados y los puestos políticos laborales. Transparencia radical en la gestión municipal.</p>
-                        </div>
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all fade-up delay-2">
+                    <div class="size-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined">gavel</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Fin al Amiguismo</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Trabajamos para terminar con los puestos políticos laborales. Transparencia radical en la gestión municipal.</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="md:col-span-1 bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 p-8 rounded-2xl group hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-3">
-                    <div class="flex flex-col gap-4">
-                        <div class="size-12 rounded-xl bg-amber/10 text-amber flex items-center justify-center">
-                            <span class="material-symbols-outlined">groups</span>
-                        </div>
-                        <h3 class="text-lg font-bold dark:text-white">Trabajo en Equipo</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Enfrentamos juntos cada gestión con argumentos sólidos, preparación y la personalidad necesaria.</p>
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all fade-up delay-3">
+                    <div class="size-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined">groups</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Trabajo en Equipo</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Enfrentamos juntos cada gestión con argumentos sólidos, preparación y personalidad.</p>
                     </div>
                 </div>
-                <!-- Card 4 -->
-                <div class="md:col-span-1 bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 p-8 rounded-2xl group hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-4">
-                    <div class="flex flex-col gap-4">
-                        <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                            <span class="material-symbols-outlined">handshake</span>
-                        </div>
-                        <h3 class="text-lg font-bold dark:text-white">Compromiso Inquebrantable</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Presencia activa y preocupación constante por cada funcionario. No descansamos hasta encontrar solución.</p>
+                <!-- Card 4 Wide -->
+                <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row gap-8 items-center hover:shadow-lg transition-all fade-up delay-4">
+                    <div class="size-20 bg-primary/10 text-primary rounded-3xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-4xl">handshake</span>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Compromiso Inquebrantable</h4>
+                        <p class="text-slate-500 leading-relaxed">Presencia activa y preocupación constante por cada funcionario. No descansamos hasta encontrar una solución para defender tu carrera funcionaria.</p>
                     </div>
                 </div>
             </div>
@@ -220,48 +237,49 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section id="testimonios" class="py-24 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
+    <section id="testimonios" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-up">
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-coral/10 border border-coral/20 rounded-full text-coral text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 border border-secondary/20 rounded-full text-secondary text-xs font-bold uppercase tracking-widest mb-4">
                     Testimonios Reales
                 </span>
-                <h2 class="text-3xl md:text-5xl font-black dark:text-white">Lo Que Dicen Nuestros Compañeros</h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Lo Que Dicen Nuestros Compañeros</h2>
             </div>
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Quote -->
-                <div class="lg:w-1/2 relative fade-up delay-1">
-                    <span class="absolute -top-10 -left-4 text-[120px] font-serif text-primary/10 leading-none select-none">"</span>
-                    <div class="relative z-10">
-                        <p class="text-2xl md:text-3xl font-medium italic text-slate-800 dark:text-slate-200 leading-snug mb-8">
+                <div class="relative fade-up delay-1">
+                    <span class="material-symbols-outlined !text-[100px] absolute -top-12 -left-6 text-primary/10 select-none">format_quote</span>
+                    <blockquote class="relative z-10">
+                        <p class="text-2xl md:text-3xl font-medium italic text-slate-700 leading-snug">
                             "Quisiera expresarles mi más profundo y sincero agradecimiento por haber sido los actores principales en las gestiones para la continuidad de mis labores en la Municipalidad. No solo reconozco su <span class="text-primary font-bold not-italic">calidad humana</span>, sino también su gran <span class="text-primary font-bold not-italic">capacidad profesional y de gestión</span> como dirigentes."
                         </p>
-                        <div class="flex items-center gap-4">
-                            <div class="size-14 rounded-full bg-gradient-to-br from-coral to-amber flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                        <footer class="mt-8 flex items-center gap-4">
+                            <div class="size-14 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                                 SR
                             </div>
                             <div>
-                                <p class="font-bold text-slate-900 dark:text-white">Sergio Riquelme Garces</p>
-                                <p class="text-sm text-slate-500">Funcionario Municipal — Municipalidad de Arica</p>
+                                <p class="font-bold text-slate-900 text-lg">Sergio Riquelme Garces</p>
+                                <p class="text-slate-500">Funcionario Municipal — Municipalidad de Arica</p>
                             </div>
-                        </div>
-                    </div>
+                        </footer>
+                    </blockquote>
                 </div>
-                <!-- Response -->
-                <div class="lg:w-1/2 fade-up delay-2">
-                    <div class="bg-gradient-to-br from-electric-violet to-deep-purple p-10 rounded-2xl text-white shadow-2xl relative">
-                        <div class="absolute -top-4 -right-4 size-14 bg-coral rounded-full flex items-center justify-center shadow-lg">
+                <!-- Response Card -->
+                <div class="fade-up delay-2">
+                    <div class="bg-primary rounded-3xl p-10 text-white relative overflow-hidden shadow-2xl shadow-primary/30">
+                        <div class="absolute top-0 right-0 size-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                        <div class="absolute -bottom-4 -right-4 size-14 bg-secondary rounded-full flex items-center justify-center shadow-lg">
                             <span class="material-symbols-outlined">chat</span>
                         </div>
-                        <h4 class="text-2xl font-black mb-6">Nuestra Respuesta</h4>
-                        <p class="text-white/90 text-base md:text-lg mb-8 italic leading-relaxed">
-                            "Nada que agradecer, esto es fruto del <span class="text-coral font-bold not-italic">trabajo en equipo</span>. Son estas manifestaciones de satisfacción que nos llena de orgullo el ser Dirigentes Municipales. Seguiremos luchando con <span class="text-coral font-bold not-italic">argumentos, preparación y personalidad</span> en defensa de la carrera municipal de nuestros técnicos y profesionales."
-                        </p>
-                        <div class="flex items-center gap-4 border-t border-white/20 pt-6">
-                            <img src="img/gonzalo-ramos.webp" alt="Gonzalo Ramos" class="size-12 rounded-full object-cover border-2 border-white/50 flex-shrink-0"/>
-                            <div>
-                                <p class="font-bold tracking-wide">Gonzalo Ramos</p>
-                                <p class="text-white/60 text-sm">Dirigente APROTEC</p>
+                        <div class="relative z-10">
+                            <div class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Respuesta de Gonzalo</div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-6">Un compromiso con el futuro municipal</h4>
+                            <p class="text-white/90 leading-relaxed mb-8 text-base md:text-lg italic">
+                                "Nada que agradecer, esto es fruto del <span class="text-secondary font-bold not-italic">trabajo en equipo</span>. Son estas manifestaciones de satisfacción que nos llena de orgullo el ser Dirigentes Municipales. Seguiremos luchando con <span class="text-secondary font-bold not-italic">argumentos, preparación y personalidad</span> en defensa de la carrera municipal."
+                            </p>
+                            <div class="flex items-center gap-3 border-t border-white/20 pt-6">
+                                <img src="img/gonzalo-ramos.webp" alt="Gonzalo Ramos" class="size-11 rounded-full object-cover border-2 border-white/40 flex-shrink-0"/>
+                                <p class="font-semibold">Gonzalo Ramos — Dirigente APROTEC</p>
                             </div>
                         </div>
                     </div>
@@ -271,40 +289,64 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="contacto" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto relative overflow-hidden bg-gradient-to-r from-deep-purple via-electric-violet to-primary rounded-3xl p-12 md:p-20 text-center text-white fade-up">
-            <!-- Abstract background blobs -->
-            <div class="absolute -top-20 -right-20 size-64 bg-coral/20 blur-[80px] rounded-full"></div>
-            <div class="absolute -bottom-20 -left-20 size-64 bg-amber/20 blur-[80px] rounded-full"></div>
-            <div class="relative z-10 flex flex-col items-center gap-8">
-                <h2 class="text-3xl md:text-6xl font-black leading-tight max-w-2xl">
-                    ¿Quieres ser parte del cambio?
-                </h2>
-                <p class="text-lg md:text-xl text-white/80 max-w-xl">
+    <section id="contacto" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto bg-gradient-to-br from-primary to-deep-purple rounded-[2.5rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-primary/30 fade-up">
+            <!-- Decorative blobs -->
+            <div class="absolute -top-20 -right-20 size-64 bg-secondary/20 blur-[80px] rounded-full"></div>
+            <div class="absolute -bottom-20 -left-20 size-64 bg-accent/15 blur-[80px] rounded-full"></div>
+            <div class="relative z-10 space-y-8">
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">¿Quieres ser parte del cambio?</h2>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
                     Súmate a APROTEC y fortalezcamos juntos la defensa de los técnicos y profesionales de Arica. Tu carrera funcionaria merece ser defendida.
                 </p>
-                <a href="https://aprotec.cl" target="_blank" class="bg-white text-primary font-black px-12 py-5 rounded-full text-lg shadow-xl hover:scale-105 hover:bg-slate-50 transition-all uppercase tracking-wider inline-block">
-                    Afíliate a APROTEC
-                </a>
+                <div class="pt-4">
+                    <a href="https://aprotec.cl" target="_blank" class="bg-white text-primary hover:bg-slate-50 px-10 py-5 rounded-full font-extrabold text-xl shadow-xl transition-all hover:scale-105 inline-block">
+                        Afíliate a APROTEC
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-3">
-                <img src="img/logo-aprotec.png" alt="APROTEC" class="h-8 opacity-70"/>
+    <footer class="bg-background-soft pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 border-b border-slate-200 pb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="img/logo-aprotec.png" alt="APROTEC" class="h-10 opacity-80"/>
+                    </div>
+                    <p class="text-slate-500 max-w-xs leading-relaxed text-sm">
+                        Asociación de Profesionales y Técnicos de la Municipalidad de Arica. Argumentos, Preparación y Personalidad.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="space-y-3">
+                        <h5 class="font-bold text-slate-900">Navegación</h5>
+                        <ul class="space-y-2 text-slate-500 text-sm">
+                            <li><a class="hover:text-primary transition-colors" href="#inicio">Inicio</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#valores">Valores</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#testimonios">Testimonios</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h5 class="font-bold text-slate-900">Contacto</h5>
+                        <ul class="space-y-2 text-slate-500 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined !text-base">language</span>
+                                <a class="hover:text-primary transition-colors" href="https://aprotec.cl" target="_blank">aprotec.cl</a>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined !text-base">location_on</span>
+                                Arica, Chile
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="flex gap-8 text-sm font-medium text-slate-500">
-                <a class="hover:text-primary transition-colors" href="#inicio">Inicio</a>
-                <a class="hover:text-primary transition-colors" href="#valores">Valores</a>
-                <a class="hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
-                <a class="hover:text-primary transition-colors" href="https://aprotec.cl" target="_blank">APROTEC</a>
+            <div class="mt-8 text-center md:text-left">
+                <p class="text-xs text-slate-400">&copy; 2026 Gonzalo Ramos — APROTEC. Todos los derechos reservados.</p>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-8 text-center md:text-left">
-            <p class="text-xs text-slate-400 font-medium">&copy; 2026 Gonzalo Ramos — APROTEC. Todos los derechos reservados. Arica, Chile.</p>
         </div>
     </footer>
 
