@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gonzalo Ramos — APROTEC | Dirigente Municipal Arica 2026</title>
+    <meta name="description" content="Gonzalo Ramos, dirigente APROTEC. Defendiendo la carrera funcionaria de los técnicos y profesionales de la Municipalidad de Arica con argumentos, preparación y personalidad.">
+    <link rel="icon" href="https://aprotec.cl/img/logo-aprotec-banner.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f1a20e",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0a1e3d",
+                        "accent-blue": "#0a1e3d",
+                        "accent-gold": "#e8a317",
+                        "surface-dark": "#162a4a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        .hero-gradient {
+            background: radial-gradient(ellipse at 70% 30%, rgba(232,163,23,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 20% 80%, rgba(26,109,213,0.06) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col">
+
+    <!-- Navigation Bar -->
+    <header id="header" class="fixed top-0 z-50 w-full border-b border-slate-200/10 bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3">
+                <img src="img/logo-aprotec.png" alt="APROTEC Logo" class="h-10 w-auto"/>
+            </a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider" href="#inicio">Inicio</a>
+                <a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider" href="#compromiso">Compromiso</a>
+                <a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider" href="#testimonios">Testimonios</a>
+                <a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider" href="#contacto">Contáctanos</a>
+            </nav>
+            <a href="https://aprotec.cl" target="_blank" class="hidden md:inline-block bg-primary hover:bg-accent-gold transition-all text-background-dark px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/20">
+                Afíliate
+            </a>
+            <!-- Mobile menu button -->
+            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="fixed top-[72px] left-0 right-0 z-40 bg-background-dark/95 backdrop-blur-xl border-b-2 border-primary px-6 py-6 flex-col gap-4 hidden">
+        <a class="text-white/85 text-lg font-medium py-2 border-b border-white/5 block hover:text-primary transition-colors" href="#inicio">Inicio</a>
+        <a class="text-white/85 text-lg font-medium py-2 border-b border-white/5 block hover:text-primary transition-colors" href="#compromiso">Compromiso</a>
+        <a class="text-white/85 text-lg font-medium py-2 border-b border-white/5 block hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
+        <a class="text-white/85 text-lg font-medium py-2 border-b border-white/5 block hover:text-primary transition-colors" href="#contacto">Contáctanos</a>
+        <a href="https://aprotec.cl" target="_blank" class="bg-primary text-background-dark px-6 py-3 rounded-lg text-center font-bold mt-2 block">Afíliate a APROTEC</a>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="flex-1">
+        <section id="inicio" class="relative bg-background-dark pt-28 md:pt-12 pb-24 px-6 md:px-20 overflow-hidden min-h-screen flex items-center">
+            <!-- Abstract background -->
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-background-dark/50 to-transparent"></div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                <div class="z-10 flex flex-col gap-8">
+                    <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full w-fit fade-up">
+                        <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">APROTEC — Campaña 2026</span>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight fade-up delay-1">
+                            Argumentos, Preparación y <span class="text-accent-gold">Personalidad</span>
+                        </h1>
+                        <h2 class="text-primary text-xl md:text-2xl font-semibold tracking-wide border-l-4 border-primary pl-4 italic fade-up delay-2">
+                            Tu Carrera Municipal, Nuestra Lucha.
+                        </h2>
+                        <p class="text-slate-300 text-lg leading-relaxed max-w-xl fade-up delay-3">
+                            Defendiendo la carrera funcionaria de los técnicos y profesionales de la Municipalidad de Arica. 
+                            Terminemos con el amiguismo, luchemos con hechos y transparencia real.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mt-4 fade-up delay-4">
+                        <a href="#compromiso" class="bg-primary hover:bg-accent-gold text-background-dark px-8 py-4 rounded-xl text-base font-bold transition-all transform hover:scale-105 shadow-xl shadow-primary/20 inline-block">
+                            Conoce Nuestro Compromiso
+                        </a>
+                        <a href="https://aprotec.cl" target="_blank" class="border-2 border-white/20 hover:border-white/50 text-white px-8 py-4 rounded-xl text-base font-bold transition-all inline-block">
+                            Visitar APROTEC
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group fade-up delay-2">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent blur-2xl opacity-50"></div>
+                    <div class="relative aspect-[3/4] rounded-3xl overflow-hidden border-4 border-slate-800/50 shadow-2xl max-w-[400px] mx-auto float-anim">
+                        <img class="w-full h-full object-cover" alt="Gonzalo Ramos — Dirigente APROTEC" src="img/candidato.jpg"/>
+                        <div class="absolute bottom-6 left-6 right-6 bg-background-dark/90 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-xl">
+                            <h3 class="text-white text-xl font-bold">Gonzalo Ramos</h3>
+                            <p class="text-primary text-sm font-medium tracking-wide uppercase">Dirigente Municipal — APROTEC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compromiso Section -->
+        <section id="compromiso" class="bg-background-light dark:bg-slate-100 py-24 px-6 md:px-20 text-slate-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col gap-4 mb-16 text-center lg:text-left max-w-3xl fade-up">
+                    <h2 class="text-accent-blue text-3xl md:text-5xl font-black leading-tight tracking-tight">
+                        Defendiendo la Carrera Funcionaria con Hechos, No con Palabras
+                    </h2>
+                    <div class="h-1.5 w-24 bg-primary rounded-full lg:mx-0 mx-auto"></div>
+                    <p class="text-slate-600 text-lg font-medium">Nuestros pilares fundamentales para una gestión transparente y profesional en el municipio.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="flex flex-col gap-6 rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-1">
+                        <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined !text-3xl">shield</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-accent-blue text-xl font-bold">Defensa de la Carrera Municipal</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Luchamos para que cada técnico y profesional sea valorado por su mérito, preparación y trayectoria, no por contactos políticos.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="flex flex-col gap-6 rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-2">
+                        <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined !text-3xl">balance</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-accent-blue text-xl font-bold">Fin al Amiguismo</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Trabajamos para terminar con los comentarios mal intencionados y los puestos políticos laborales. Tu carrera se construye con trabajo.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flex flex-col gap-6 rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-3">
+                        <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined !text-3xl">front_hand</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-accent-blue text-xl font-bold">Trabajo en Equipo</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Enfrentamos juntos cada gestión con argumentos sólidos, preparación y la personalidad necesaria para defender tus derechos.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flex flex-col gap-6 rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 fade-up delay-4">
+                        <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined !text-3xl">handshake</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-accent-blue text-xl font-bold">Compromiso Inquebrantable</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Presencia activa y preocupación constante por cada funcionario. No descansamos hasta encontrar una solución.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section id="testimonios" class="py-24 px-6 md:px-20 bg-white dark:bg-background-dark border-y border-slate-200 dark:border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 fade-up">
+                    <span class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary text-xs font-bold uppercase tracking-widest mb-4">
+                        Testimonios Reales
+                    </span>
+                    <h2 class="text-white text-3xl md:text-5xl font-black tracking-tight">Lo Que Dicen Nuestros Compañeros</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-slate-200 dark:bg-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                    <!-- Left: Testimonial -->
+                    <div class="bg-slate-50 dark:bg-surface-dark p-10 md:p-16 flex flex-col justify-center fade-up delay-1">
+                        <span class="material-symbols-outlined text-primary !text-6xl mb-6 opacity-30">format_quote</span>
+                        <blockquote class="text-xl md:text-2xl font-medium italic text-slate-800 dark:text-slate-200 mb-8 leading-snug">
+                            "Quisiera expresarles mi más profundo y sincero agradecimiento por haber sido los actores principales en las gestiones para la continuidad de mis labores en la Municipalidad. No solo reconozco su <span class="text-primary font-bold not-italic">calidad humana</span>, sino también su gran <span class="text-primary font-bold not-italic">capacidad profesional y de gestión</span> como dirigentes."
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="size-14 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                                SR
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 dark:text-white">Sergio Riquelme Garces</p>
+                                <p class="text-slate-500 text-sm">Funcionario Municipal — Municipalidad de Arica</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right: Response -->
+                    <div class="bg-accent-blue p-10 md:p-16 flex flex-col justify-center gap-6 fade-up delay-2">
+                        <div class="inline-flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined">verified</span>
+                            <span class="text-sm font-bold uppercase tracking-widest">Respuesta de Gonzalo</span>
+                        </div>
+                        <h3 class="text-white text-2xl md:text-3xl font-black">Un compromiso con el futuro municipal</h3>
+                        <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                            "Nada que agradecer, esto es fruto del <span class="text-primary font-bold">trabajo en equipo</span>. Son estas manifestaciones de satisfacción que nos llena de orgullo el ser Dirigentes Municipales. Es todo un trabajo desde los inicios de nuestra APROTEC defender la carrera funcionaria y terminar con el amiguismo, y así seguir luchando con <span class="text-primary font-bold">argumentos, preparación y personalidad</span> en defensa de la carrera municipal."
+                        </p>
+                        <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                            <img src="img/gonzalo-ramos.webp" alt="Gonzalo Ramos" class="size-12 rounded-full object-cover border-2 border-primary flex-shrink-0"/>
+                            <div>
+                                <p class="font-bold text-white">Gonzalo Ramos</p>
+                                <p class="text-primary text-sm">Dirigente APROTEC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contacto" class="py-24 px-6 md:px-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-blue via-surface-dark to-black"></div>
+            <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+            <div class="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center gap-8 fade-up">
+                <h2 class="text-white text-3xl md:text-6xl font-black tracking-tight">¿Quieres ser parte del cambio?</h2>
+                <p class="text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+                    Es momento de unir fuerzas. Súmate a APROTEC y fortalezcamos juntos la defensa de los técnicos y profesionales de Arica.
+                </p>
+                <a href="https://aprotec.cl" target="_blank" class="bg-primary hover:bg-accent-gold text-background-dark px-12 py-5 rounded-2xl text-xl font-black transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(241,162,14,0.3)] inline-block">
+                    Afíliate a APROTEC
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark py-12 px-6 md:px-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-4 items-center md:items-start">
+                <div class="flex items-center gap-3">
+                    <img src="img/logo-aprotec.png" alt="APROTEC" class="h-9 opacity-70"/>
+                </div>
+                <p class="text-slate-500 text-sm max-w-xs text-center md:text-left">
+                    Asociación de Profesionales y Técnicos de la Municipalidad de Arica. Defendiendo la carrera funcionaria desde la base de la verdad.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-12">
+                <div class="flex flex-col gap-4">
+                    <p class="text-white text-sm font-bold uppercase tracking-widest">Navegación</p>
+                    <nav class="flex flex-col gap-2">
+                        <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#inicio">Inicio</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#compromiso">Compromiso</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#testimonios">Testimonios</a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-white text-sm font-bold uppercase tracking-widest">Contacto</p>
+                    <nav class="flex flex-col gap-2">
+                        <a class="text-slate-500 hover:text-primary transition-colors text-sm flex items-center gap-2" href="https://aprotec.cl" target="_blank">
+                            <span class="material-symbols-outlined !text-base">language</span> aprotec.cl
+                        </a>
+                        <span class="text-slate-500 text-sm flex items-center gap-2">
+                            <span class="material-symbols-outlined !text-base">location_on</span> Arica, Chile
+                        </span>
+                    </nav>
+                </div>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <p class="text-slate-600 text-xs">&copy; 2026 Gonzalo Ramos — APROTEC. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('shadow-2xl', window.scrollY > 50);
+        header.classList.toggle('bg-background-dark/95', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileNav.classList.toggle('hidden', !menuOpen);
+        mobileNav.classList.toggle('flex', menuOpen);
+        // Hamburger animation
+        const spans = menuToggle.querySelectorAll('span');
+        if (menuOpen) {
+            spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+        } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+        }
+    });
+
+    // Close mobile menu on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuOpen = false;
+            mobileNav.classList.add('hidden');
+            mobileNav.classList.remove('flex');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>
